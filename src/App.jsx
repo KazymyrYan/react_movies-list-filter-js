@@ -17,8 +17,10 @@ export const App = () => {
   const [query, setQuery] = useState('');
   const normalizedQuery = query.toLowerCase().trim();
 
-  const visibleMovies = moviesFromServer.filter(movie =>
-    matchesQuery(movie, normalizedQuery));
+  const visibleMovies = moviesFromServer.filter(
+    movie => matchesQuery(movie, normalizedQuery),
+    // eslint-disable-next-line function-paren-newline
+  );
 
   return (
     <div className="page">
